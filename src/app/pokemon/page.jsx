@@ -45,6 +45,10 @@ const PokeApi = ({ onSelect }) => {
     }
   }, [allpokemons]);
 
+  if (!allpokemons) {
+    return <div className="text-white">Loading...</div>;
+  }
+
   return (
     <>
       <h1 className="text-center text-white text-2xl font-mono">PokeApi</h1>

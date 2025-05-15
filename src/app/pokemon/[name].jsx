@@ -45,7 +45,7 @@ const PokeDetail = ({ name }) => {
     fetchImage();
   }, [name]);
 
-  if (!pokemon) return <p>Cargando...</p>;
+  if (!pokemon) return <p>Loading...</p>;
 
   return (
     <div className="flex">
