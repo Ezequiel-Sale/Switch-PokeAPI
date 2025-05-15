@@ -53,7 +53,7 @@ const PokeApi = ({ onSelect }) => {
           <button
             key={pokemon.name}
             onClick={() => onSelect(pokemon.name)}
-            className="w-[90px] h-[120px] bg-cyan-900 rounded-md flex flex-col justify-center items-center m-1 text-white"
+            className="w-[90px] h-[120px] bg-cyan-900 rounded-md flex flex-col justify-center items-center m-1 text-white hover:bg-cyan-950"
           >
             <li className="list-none">{pokemon.name}</li>
             {pokemonDetails.find((detail) => detail.name === pokemon.name) && (
