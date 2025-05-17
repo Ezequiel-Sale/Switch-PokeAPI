@@ -11,8 +11,9 @@ const Scene = () => {
         gl={{ antialias: true, powerPreference: "high-performance" }}
       >
           <Switch rotation={[1.5, 0, 0]} />
-        <ambientLight intensity={4} position={[0, 0, 5]} />
+        <ambientLight intensity={1} position={[0, 0, 5]} />
         <OrbitControls target={[0, 0, 0]} enableZoom={false} />
+        <Environment preset="city" />
       </Canvas>
     </div>
   );

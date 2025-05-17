@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 const PokeDetail = ({ name }) => {
   const [pokemon, setPokemon] = useState(null);
   const [img, setImg] = useState(null);
-  console.log(pokemon);
 
   const typeColors = {
     grass: "bg-green-500",
@@ -27,9 +26,17 @@ const PokeDetail = ({ name }) => {
     steel: "bg-gray-500",
   };
 
+window.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowDown") {
+    window.scrollTo({ bottom: 0, behavior: "smooth" });
+  }
+  
+})
+
+
   useEffect(() => {
     const fetchPokemon = async () => {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.name}`);
       const data = await res.json();
       setPokemon(data);
     };
@@ -38,7 +45,7 @@ const PokeDetail = ({ name }) => {
 
   useEffect(() => {
     const fetchImage = async () => {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.name}`);
       const data = await res.json();
       setImg(data.sprites);
     };
